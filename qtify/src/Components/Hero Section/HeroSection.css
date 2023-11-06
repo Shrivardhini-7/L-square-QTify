@@ -1,0 +1,19 @@
+.hero-section {
+  width: 100vw;
+  height: 270px;
+  background-color: var(--css-black);
+  color: var(--css-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+p {
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 1px;
+}
+.headphone-img {
+  width: 18vw;
+  height: 23vh;
+}
