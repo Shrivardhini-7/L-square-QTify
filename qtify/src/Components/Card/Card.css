@@ -1,0 +1,30 @@
+.card {
+  position: relative;
+  background-color: var(--css-black);
+  width: 10vw;
+}
+.whitebg {
+  position: absolute;
+  width: 10vw;
+  background-color: var(--css-white);
+  height: 30px;
+  border-radius: 0 0 8px 8px;
+}
+
+.followers {
+  z-index: 9;
+  color: var(--css-white);
+  height: 24px;
+  font-size: 10px;
+  font-weight: 400;
+  width: 5vw;
+  background-color: var(--css-black);
+  position: relative;
+  border-radius: 10px;
+  padding: 4px 8px 4px 8px;
+  margin: 3px;
+}
+p {
+  text-align: left;
+  padding: 2px;
+}
