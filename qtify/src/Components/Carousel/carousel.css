@@ -1,0 +1,15 @@
+.carousel-section {
+  position: relative;
+}
+.nav {
+  position: absolute;
+  z-index: 1;
+  top: 45%;
+  transform: translateY(-50%);
+}
+.left-nav {
+  left: -6px;
+}
+.right-nav {
+  right: 6px;
+}

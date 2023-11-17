@@ -12,3 +12,13 @@
   gap: 32px;
   /* justify-content: center; */
 }
+.cards-section-header {
+  display: flex;
+  justify-content: space-between;
+}
+.toggle-button {
+  color: var(--css-color);
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -18,28 +18,35 @@ function App() {
     axios.get(`${apiEndpoint}albums/new`).then(({ data }) => {
       setNewAlbums(data);
     });
+    // apiCall1();
+    // apiCall2();
   }, []);
 
-  let apiCall = async () => {
+  let apiCall1 = async () => {
     try {
-      let response1 = await axios.get(`${apiEndpoint}albums/top`);
-      setTopAlbums(response1.data);
-      let response2 = await axios.get(`${apiEndpoint}albums/new`);
-      setNewAlbums(response2.data);
+      let response = await axios.get(`${apiEndpoint}albums/top`);
+      setTopAlbums(response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  let apiCall2 = async () => {
+    try {
+      let response = await axios.get(`${apiEndpoint}albums/new`);
+      setNewAlbums(response.data);
     } catch (e) {
       console.log(e);
     }
   };
 
-  console.log(topAlbums);
-  console.log("/n");
-  console.log(newAlbums);
+  // console.log(topAlbums);
+  // console.log(newAlbums);
   return (
     <div>
       <Navbar></Navbar>
       <HeroSection></HeroSection>
       <CardsSection subTitle="Top Albums" data={topAlbums}></CardsSection>
-      <CardsSection subTitle="New Albums" data={newAlbums}></CardsSection>
+      {/* <CardsSection subTitle="New Albums" data={newAlbums}></CardsSection> */}
     </div>
   );
 }
