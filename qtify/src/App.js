@@ -46,7 +46,7 @@ function App() {
       <Navbar></Navbar>
       <HeroSection></HeroSection>
       <CardsSection subTitle="Top Albums" data={topAlbums}></CardsSection>
-      {/* <CardsSection subTitle="New Albums" data={newAlbums}></CardsSection> */}
+      <CardsSection subTitle="New Albums" data={newAlbums}></CardsSection>
     </div>
   );
 }
