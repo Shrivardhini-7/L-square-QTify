@@ -1,0 +1,14 @@
+.sub-titles {
+  color: var(--css-white);
+  font-weight: 600;
+  font-size: 20px;
+}
+.cards-section {
+  padding: 10px 32px;
+}
+.album-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  /* justify-content: center; */
+}
