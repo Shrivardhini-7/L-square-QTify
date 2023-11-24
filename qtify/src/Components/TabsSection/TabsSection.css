@@ -5,6 +5,7 @@
   }
   .filter-section {
     padding: 10px 32px;
+    border: 1px solid var(--css-color);
   }
   .tab-label{
     color: var(--css-white) !important;

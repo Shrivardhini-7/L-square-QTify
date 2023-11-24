@@ -1,0 +1,29 @@
+h3{
+    color: var(--css-white);
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    margin: 1rem;
+}
+.break{
+    height:2rem;
+}
+.accordion{
+    width:80%;
+    margin :0 auto;
+    padding-bottom: 2rem;
+
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    border-radius: 8px !important;
+}
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root{
+    background-color:var(--css-black) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: 1px solid white !important;
+}
+.css-i4bv87-MuiSvgIcon-root{
+    color:var(--css-color);
+    
+}

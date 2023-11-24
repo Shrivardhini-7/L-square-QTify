@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import HeroSection from "./Components/Hero Section";
 import CardsSection from "./Components/CardsSection";
 import TabsSection from "./Components/TabsSection";
+import FAQAccordion from "./Components/FAQAccordion";
 
 function App() {
   let apiEndpoint = "https://qtify-backend-labs.crio.do/";
@@ -60,6 +61,7 @@ function App() {
       <CardsSection subTitle="Top Albums" data={topAlbums} id="1"></CardsSection>
       <CardsSection subTitle="New Albums" data={newAlbums} id="2"></CardsSection>
       <TabsSection subTitle="Songs" genresdata={genres} id="3"></TabsSection>
+      <FAQAccordion></FAQAccordion>
     </div>
   );
 }

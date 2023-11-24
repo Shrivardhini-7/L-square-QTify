@@ -44,7 +44,7 @@ function a11yProps(index) {
   };
 }
 
-export default function TabsSection({subTitle, genresdata,id}) {
+let TabsSection =({subTitle, genresdata,id}) => {
   let apiEndpoint = "https://qtify-backend-labs.crio.do/";
   const [value, setValue] = React.useState(0);
   let [songs,setSongs] = useState([]);
@@ -102,4 +102,4 @@ export default function TabsSection({subTitle, genresdata,id}) {
   );
 }
 
-//export default TabsSection;
+export default TabsSection;
