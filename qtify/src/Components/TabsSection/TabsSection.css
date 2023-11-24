@@ -1,0 +1,19 @@
+.sub-titles {
+    color: var(--css-white);
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .filter-section {
+    padding: 10px 32px;
+  }
+  .tab-label{
+    color: var(--css-white) !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+  }
+  .tabs-carousel-section{
+   padding: 0;
+  }
+  .css-19kzrtu{
+    padding:0 !important;
+  }

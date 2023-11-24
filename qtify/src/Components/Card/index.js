@@ -1,6 +1,6 @@
 import "./Card.css";
 
-let Card = ({ imgSrc, noOfFollowers, label }) => {
+let Card = ({ imgSrc, noOfFollowers, label, followsOrLikes }) => {
   return (
     <div className="card">
       <div className="card-image">
@@ -12,9 +12,9 @@ let Card = ({ imgSrc, noOfFollowers, label }) => {
       </div>
 
       <div className="whitebg"></div>
-      <div className="followers">{noOfFollowers} Follows</div>
+      <div className="followers">{noOfFollowers} {followsOrLikes}</div>
       <p
-        style={{ height: 25, color: "white", fontSize: 14, fontWeight: "400" }}
+        style={{ color: "white", fontSize: 14, fontWeight: "400" }}
       >
         {label}
       </p>

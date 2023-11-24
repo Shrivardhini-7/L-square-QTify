@@ -10,7 +10,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-let Carousel = ({ data }) => {
+let Carousel = ({ data, id, followsOrLikes }) => {
+
   return (
     <div className="carousel-section">
       <Swiper
@@ -21,24 +22,36 @@ let Carousel = ({ data }) => {
         // pagination={{
         //   type: "fraction",
         // }}
-        navigation={{ nextEl: ".right-nav", prevEl: ".left-nav" }}
+        navigation={{ nextEl: ".right-nav" + id, prevEl: ".left-nav" +id}}
         virtual
         parallax="true"
       >
         {data.map((cardData) => (
           <SwiperSlide key={cardData.id}>
-            <Card
+            {followsOrLikes === "Follows" ? (<Card
               imgSrc={cardData.image}
               noOfFollowers={cardData.follows}
               label={cardData.title}
-            ></Card>
+              followsOrLikes={followsOrLikes}
+            ></Card>):(<Card
+              imgSrc={cardData.image}
+              noOfFollowers={cardData.likes}
+              label={cardData.title}
+              followsOrLikes={followsOrLikes}
+            ></Card>)}
+            {/* <Card
+              imgSrc={cardData.image}
+              noOfFollowers={cardData.follows}
+              label={cardData.title}
+              followsOrLikes={followsOrLikes}
+            ></Card> */}
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="left-nav nav">
+      <div className= {`${"left-nav" + id} left-nav nav `}>
         <img src="leftnav.png" alt="leftnav" />
       </div>
-      <div className="right-nav nav">
+      <div className={`${"right-nav" + id} right-nav nav `}>
         <img src="rightnav.png" alt="rightnav" />
       </div>
     </div>

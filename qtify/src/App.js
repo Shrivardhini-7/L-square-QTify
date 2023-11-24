@@ -5,21 +5,24 @@ import axios from "axios";
 import Navbar from "./Components/Navbar";
 import HeroSection from "./Components/Hero Section";
 import CardsSection from "./Components/CardsSection";
+import TabsSection from "./Components/TabsSection";
 
 function App() {
   let apiEndpoint = "https://qtify-backend-labs.crio.do/";
   let [topAlbums, setTopAlbums] = useState([]);
   let [newAlbums, setNewAlbums] = useState([]);
+  let [genres,setGenres] = useState([]);
 
   useEffect(() => {
-    axios.get(`${apiEndpoint}albums/top`).then(({ data }) => {
-      setTopAlbums(data);
-    });
-    axios.get(`${apiEndpoint}albums/new`).then(({ data }) => {
-      setNewAlbums(data);
-    });
-    // apiCall1();
-    // apiCall2();
+    // axios.get(`${apiEndpoint}albums/top`).then(({ data }) => {
+    //   setTopAlbums(data);
+    // });
+    // axios.get(`${apiEndpoint}albums/new`).then(({ data }) => {
+    //   setNewAlbums(data);
+    // });
+    apiCall1();
+    apiCall2();
+    genresData();
   }, []);
 
   let apiCall1 = async () => {
@@ -38,15 +41,25 @@ function App() {
       console.log(e);
     }
   };
+  let genresData = async () => {
+    try{
+     let response = await axios.get(`${apiEndpoint}genres`);
+     setGenres(response.data.data)
+    }catch(e){
+     console.log(e);
+    }
+  }
 
   // console.log(topAlbums);
-  // console.log(newAlbums);
+  //console.log(newAlbums);
+  //console.log(genres);
   return (
     <div>
       <Navbar></Navbar>
       <HeroSection></HeroSection>
-      <CardsSection subTitle="Top Albums" data={topAlbums}></CardsSection>
-      <CardsSection subTitle="New Albums" data={newAlbums}></CardsSection>
+      <CardsSection subTitle="Top Albums" data={topAlbums} id="1"></CardsSection>
+      <CardsSection subTitle="New Albums" data={newAlbums} id="2"></CardsSection>
+      <TabsSection subTitle="Songs" genresdata={genres} id="3"></TabsSection>
     </div>
   );
 }

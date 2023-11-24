@@ -3,7 +3,7 @@ import Card from "../Card";
 import { useState } from "react";
 import Carousel from "../Carousel";
 
-let CardsSection = ({ subTitle, data }) => {
+let CardsSection = ({ subTitle, data, id }) => {
   let [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
@@ -21,7 +21,7 @@ let CardsSection = ({ subTitle, data }) => {
       </div>
       {isCollapsed ? (
         <>
-          <Carousel data={data}></Carousel>
+          <Carousel data={data} id={id} followsOrLikes="Follows"></Carousel>
         </>
       ) : (
         <div className="album-section">
@@ -31,6 +31,7 @@ let CardsSection = ({ subTitle, data }) => {
               imgSrc={cardData.image}
               noOfFollowers={cardData.follows}
               label={cardData.title}
+              followsOrLikes="Follows"
             ></Card>
           ))}
         </div>
