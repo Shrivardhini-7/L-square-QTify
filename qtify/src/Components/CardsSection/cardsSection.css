@@ -10,7 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  /* justify-content: center; */
 }
 .cards-section-header {
   display: flex;
@@ -21,4 +20,7 @@
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
+}
+#new-album-section{
+  border: 1px solid var(--css-color);
 }

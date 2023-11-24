@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -21,12 +20,16 @@ function App() {
     // axios.get(`${apiEndpoint}albums/new`).then(({ data }) => {
     //   setNewAlbums(data);
     // });
-    apiCall1();
-    apiCall2();
+    topAlbumsData();
+    newAlbumsData();
     genresData();
   }, []);
+console.log(topAlbums)
+console.log(topAlbums.map((album)=>{
+  return Object.keys(album.songs).length
+}))
 
-  let apiCall1 = async () => {
+  let topAlbumsData = async () => {
     try {
       let response = await axios.get(`${apiEndpoint}albums/top`);
       setTopAlbums(response.data);
@@ -34,7 +37,7 @@ function App() {
       console.log(e);
     }
   };
-  let apiCall2 = async () => {
+  let newAlbumsData = async () => {
     try {
       let response = await axios.get(`${apiEndpoint}albums/new`);
       setNewAlbums(response.data);
@@ -51,15 +54,12 @@ function App() {
     }
   }
 
-  // console.log(topAlbums);
-  //console.log(newAlbums);
-  //console.log(genres);
   return (
     <div>
       <Navbar></Navbar>
       <HeroSection></HeroSection>
-      <CardsSection subTitle="Top Albums" data={topAlbums} id="1"></CardsSection>
-      <CardsSection subTitle="New Albums" data={newAlbums} id="2"></CardsSection>
+      <CardsSection name= "top-album-section" subTitle="Top Albums" data={topAlbums} id="1"></CardsSection>
+      <CardsSection name= "new-album-section" subTitle="New Albums" data={newAlbums} id="2"></CardsSection>
       <TabsSection subTitle="Songs" genresdata={genres} id="3"></TabsSection>
       <FAQAccordion></FAQAccordion>
     </div>

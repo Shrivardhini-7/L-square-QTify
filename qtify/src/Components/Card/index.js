@@ -1,8 +1,10 @@
 import "./Card.css";
+import Tooltip from '@mui/material/Tooltip';
 
-let Card = ({ imgSrc, noOfFollowers, label, followsOrLikes }) => {
+let Card = ({ imgSrc, noOfFollowers, label, followsOrLikes, noOfSongs }) => {
   return (
     <div className="card">
+      <Tooltip title={noOfSongs} arrow>
       <div className="card-image">
         <img
           src={imgSrc}
@@ -18,6 +20,8 @@ let Card = ({ imgSrc, noOfFollowers, label, followsOrLikes }) => {
       >
         {label}
       </p>
+      </Tooltip>
+      
     </div>
   );
 };

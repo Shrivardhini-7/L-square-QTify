@@ -3,11 +3,11 @@ import Card from "../Card";
 import { useState } from "react";
 import Carousel from "../Carousel";
 
-let CardsSection = ({ subTitle, data, id }) => {
+let CardsSection = ({ subTitle, data, id, name }) => {
   let [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
-    <div className="cards-section">
+    <div className="cards-section" id={name}>
       <div className="cards-section-header">
         <h1 className="sub-titles">{subTitle}</h1>
         <h1
@@ -32,6 +32,7 @@ let CardsSection = ({ subTitle, data, id }) => {
               noOfFollowers={cardData.follows}
               label={cardData.title}
               followsOrLikes="Follows"
+              noOfSongs={Object.keys(cardData.songs).length}
             ></Card>
           ))}
         </div>

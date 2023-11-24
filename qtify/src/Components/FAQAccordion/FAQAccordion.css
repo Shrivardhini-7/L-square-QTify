@@ -14,24 +14,11 @@ h3{
     padding-bottom: 2rem;
 
 }
-/* .css-1elwnq4-MuiPaper-root-MuiAccordion-root{
-    border-radius: 8px !important;
-}
-.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root{
-    background-color:var(--css-black) !important;
-    color: white !important;
-    border-radius: 8px !important;
-    border: 1px solid white !important;
-}
-.css-i4bv87-MuiSvgIcon-root{
-    color:var(--css-color);
-
-} */
 .MuiPaper-root{
     border-radius: 8px !important;
     font-weight: 500;
 }
-.MuiButtonBase-root{
+.MuiAccordionSummary-root{
     background-color:var(--css-black) !important;
     color: white !important;
     border-radius: 8px !important;

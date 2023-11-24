@@ -1,10 +1,8 @@
 import "./carousel.css";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
 import Card from "../Card";
-import { ReactComponent as LeftNav } from "./leftnav.svg";
-import { ReactComponent as RightNav } from "./rightnav.svg";
+
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -16,12 +14,8 @@ let Carousel = ({ data, id, followsOrLikes }) => {
     <div className="carousel-section">
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
-        //onSwiper={setSwiperRef}
         slidesPerView={7}
         spaceBetween={30}
-        // pagination={{
-        //   type: "fraction",
-        // }}
         navigation={{ nextEl: ".right-nav" + id, prevEl: ".left-nav" +id}}
         virtual
         parallax="true"
@@ -33,18 +27,13 @@ let Carousel = ({ data, id, followsOrLikes }) => {
               noOfFollowers={cardData.follows}
               label={cardData.title}
               followsOrLikes={followsOrLikes}
+              noOfSongs={Object.keys(cardData.songs).length}
             ></Card>):(<Card
               imgSrc={cardData.image}
               noOfFollowers={cardData.likes}
               label={cardData.title}
               followsOrLikes={followsOrLikes}
             ></Card>)}
-            {/* <Card
-              imgSrc={cardData.image}
-              noOfFollowers={cardData.follows}
-              label={cardData.title}
-              followsOrLikes={followsOrLikes}
-            ></Card> */}
           </SwiperSlide>
         ))}
       </Swiper>
