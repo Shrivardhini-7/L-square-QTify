@@ -10,14 +10,14 @@ let FAQAccordion = () => {
         <h3>FAQs</h3>
         <div className="accordion">
         <Accordion>
-        <AccordionSummary
+        <AccordionSummary className="summary"
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
           <Typography>Is Qtify free to use?</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className="description">
           <Typography>
             Yes, It is 100% free, and has 0% ads!
           </Typography>
@@ -25,14 +25,14 @@ let FAQAccordion = () => {
       </Accordion>
       <div className="break"></div>
       <Accordion>
-        <AccordionSummary
+        <AccordionSummary className="summary"
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
           <Typography>Can I download and listen to songs offline?</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className="description">
           <Typography>
             Sorry, unfortunately we don't provide the service to download any songs.
           </Typography>
